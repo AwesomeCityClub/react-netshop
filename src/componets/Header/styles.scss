@@ -1,0 +1,116 @@
+@import "../../styles/variable.module.scss";
+
+.header {
+  background: linear-gradient(-180deg, #f53d2d, #f63);
+  color: $text;
+
+  &.login {
+    background: white;
+    color: #ee4d2d;
+
+    .logo {
+      a {
+        color: #ee4d2d;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .logo {
+    a {
+      font-size: 40px;
+      font-family: map-get($map: $fonts, $key: kosugiMaru);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $text;
+
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .functionality {
+    & > ul {
+      display: flex;
+      align-items: center;
+      & > li {
+        margin: 0 0.5rem;
+
+        &.cart {
+          font-size: 2rem;
+          position: relative;
+
+          .cart__amount {
+            position: absolute;
+            bottom: 60%;
+            left: 60%;
+            font-size: 12px;
+            border-radius: 50%;
+            text-align: center;
+            color: #ee4d2d;
+            background-color: white;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &:hover {
+            .popup {
+              display: block;
+            }
+          }
+
+          .popup {
+            display: none;
+            position: absolute;
+            right: 0;
+            padding: 5px;
+            background-color: white;
+            box-shadow: 8px 8px 15px -1px rgba(0, 0, 0, 0.75);
+          }
+        }
+
+        &.user {
+          position: relative;
+          a {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            svg {
+              font-size: 2rem;
+              margin-right: 5px;
+            }
+          }
+          &:hover {
+            .popup {
+              display: block;
+            }
+          }
+
+          .popup {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $text;
+      }
+    }
+  }
+}
